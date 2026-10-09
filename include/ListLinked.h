@@ -130,8 +130,8 @@ class ListLinked : public List<T> {
 
 		friend std::ostream& operator<<(std::ostream &out, ListLinked &list){
 			out << "List => [";
-			if(!empty()){
-				Node<T>* aux = list->first;
+			if(!list.empty()){
+				Node<T>* aux = list.first;
 				while(aux->next!= nullptr){
 					out << aux->data << ", ";
 				}
