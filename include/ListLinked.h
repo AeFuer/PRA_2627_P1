@@ -22,19 +22,12 @@ class ListLinked : public List<T> {
 		}
 
 		void insert(int pos, T e) override{
-			if(pos < 0 || pos >= size()){
+			if(pos < 0 || pos > size()){
 				throw std::out_of_range("Position out of range of List");
 			}
 			if(pos == 0){
 				Node<T>* node = new Node(e,first);
 				first = node;
-			} else if(pos == size()-1){
-				Node<T>* node = new Node(e);
-				Node<T>* aux = first;
-				while(aux->next != nullptr){
-					aux = aux->next;
-				}
-				aux -> next = node;
 			} else {
 				Node<T>* node = new Node(e);
 				Node<T>* aux = first;
@@ -134,6 +127,7 @@ class ListLinked : public List<T> {
 				Node<T>* aux = list.first;
 				while(aux->next!= nullptr){
 					out << aux->data << ", ";
+					aux = aux->next;
 				}
 				out << aux->data;
 			}
