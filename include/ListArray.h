@@ -86,7 +86,7 @@ class ListArray : public List<T>{
 		}
 
 		bool empty() override{
-			return size() = 0 ? true : false;
+			return size() == 0 ? true : false;
 		}
 
 		int size() override{
@@ -102,10 +102,13 @@ class ListArray : public List<T>{
 		
 		friend std::ostream& operator<<(std::ostream &out, ListArray<T> &list){
 			out << "List => [";
-			for(int i = 0; i < size()-1; i++){
-				out << list[i] << ", ";
+			if(list.size() > 0){
+				for(int i = 0; i < list.size()-1; i++){
+					out << list[i] << ", ";
+				}
+				out << list[list.size()-1];
 			}
-			out << list[list.size()-1] << ']';
+			out << ']';
 			return out;
 		}
 };		
