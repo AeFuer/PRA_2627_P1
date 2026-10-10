@@ -77,7 +77,7 @@ class ListArray : public List<T>{
 		}
 
 		int search(T e) override {
-			for(int i = 0; i < size()-1; i++){
+			for(int i = 0; i < size(); i++){
 				if(arr[i] == e){
 					return i;
 				}
