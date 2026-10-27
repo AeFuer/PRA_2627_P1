@@ -39,6 +39,7 @@ class ListLinked : public List<T> {
 				node->next = aux;
 				prev->next = node;
 			}
+			this->n++;
 		}
 
 		void append(T e) override{
@@ -70,6 +71,7 @@ class ListLinked : public List<T> {
 				prev->next = aux->next;
 				delete aux;
 			}
+			this->n--;
 			return node;
 		}
 
@@ -108,12 +110,6 @@ class ListLinked : public List<T> {
 		}
 
 		int size() override {
-			Node<T>* aux = first;
-			int n = 0;
-			while(aux != nullptr){
-				aux = aux->next;
-				n++;
-			}
 			return n;
 		}
 
