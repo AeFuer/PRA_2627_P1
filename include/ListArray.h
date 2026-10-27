@@ -63,7 +63,7 @@ class ListArray : public List<T>{
 				arr[i] = arr[i+1];
 			}
 			n--;
-			if(size()/2+1 < max){
+			if(size()*2+1 < max){
 				resize(max/2+1);
 			}
 			return out;
